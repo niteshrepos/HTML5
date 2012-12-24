@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" placeholder="placeholding">
+
+<script >
+	if(!("placeholder" in document.createElement("input"))){
+		document.write("do not supported placeholder<br>");
+	}
+
+	var supportAttr = function(type){
+		var i = document.createElement("input");
+		i.setAttribute("type", type);
+		return i.type === type
+	}
+
+	if(!supportAttr("email")){
+		document.write("Not supported<br>")
+	};
+
+	if(document.createElement("canvas").getContext){
+		document.write("support canvas<br>")
+	};
+
+	if(navigator.geolocation){
+		document.write("location supported<br>")
+	};
+</script>
+</body>
+</html>
